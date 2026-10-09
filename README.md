@@ -2,6 +2,8 @@
 
 An illustrated, interactive presentation of Sahej, a chronic-care follow-up concept for India. Includes the patient journey, market research, competitor landscape, SWOT analysis and Porter's Five Forces.
 
+The patient journey runs entirely through native scrolling: today’s care, a labelled rewind, then the proposed experience with Sahej. It reverses when scrolling upward and remains scroll-driven on phone and landscape layouts. Reduced-motion preferences remove easing while retaining scroll progression.
+
 **Website:** https://atharvojha.github.io/sahej/
 
 ## Files

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Sahej: from access to completion. An illustrated patient journey and market research for a clinic-first chronic-care coordination pilot in Hyderabad.">
+<meta name="description" content="Sahej: from access to completion. An illustrated patient journey and market research for a clinic-first chronic-care concept for India.">
 <meta name="theme-color" content="#f4efe3"><title>Sahej — Care that stays with you</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;500;600;700;800&family=Caveat:wght@500;600&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
@@ -81,42 +81,70 @@
 @media print{.swot-card{break-inside:avoid}.force-detail[hidden]{display:block!important;margin-top:25px}.force-lines>path,.strategy-stroke{stroke-dashoffset:0!important}.forces-layout{display:block}.force-map{display:none}.force-detail{min-height:0}}
 .strategy-stroke:not([fill]){fill:none}
 
-/* Patient journey repair: one selected month, steady layout, native scrolling. */
-.story-section{height:520svh}
-.story-sticky{padding-block:18px;align-items:center}
-.story-header{margin-top:14px;min-height:65px;gap:25px}
+/* The patient story stays scroll-driven at every viewport size. */
+.story-section{height:920svh;--story-nav:78px;background:#e8ecdf}
+.story-sticky{position:sticky;top:var(--story-nav);height:calc(100svh - var(--story-nav));min-height:0;padding-block:22px;display:block;overflow:hidden}
+.story-sticky>.wrap{height:100%;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;gap:16px;width:min(1340px,calc(100% - 2*var(--gut)))}
+.story-section .section-top{padding-bottom:10px}
+.story-header{margin:0;min-height:0;align-items:center;gap:20px}
 .story-header h2{font-size:clamp(28px,2.8vw,38px)}
-.story-version-choice{display:grid;gap:7px;justify-items:end}.story-version-choice>span{font-size:9px;color:var(--mute);line-height:1.5}
-.story-layout{grid-template-columns:minmax(260px,.7fr) minmax(0,1.5fr);gap:32px;margin-top:18px;align-items:start}
-.story-copy>.hand{display:block;font-size:21px;margin-bottom:13px;min-height:23px;white-space:nowrap}
-.story-step-label{display:flex;align-items:center;gap:15px;min-height:13px}.story-number{font-size:9px;letter-spacing:.1em;white-space:nowrap}
-.story-progress-track{display:block;width:95px;height:2px;background:#263f3820;overflow:hidden}.story-progress-track i{display:block;height:100%;width:100%;background:var(--madder);transform:scaleX(0);transform-origin:left}
-.story-section[data-version=sahej] .story-progress-track i{background:#42735a}
-.story-narrative{min-height:168px;margin-top:12px}.story-copy h3{font-size:clamp(26px,2.4vw,34px);max-width:21ch;min-height:2.24em;margin-top:0}
-.story-copy .story-narrative p{font-size:13px;line-height:1.65;margin-top:10px;min-height:6.6em;max-width:42ch}
-.story-feature{font-size:10px;line-height:1.65;margin-top:12px;padding:8px 0;min-height:34px}
-.story-controls{margin-top:14px;gap:10px;justify-content:start}.story-controls>button{width:32px;height:32px;font-size:16px}
-.story-dots{gap:7px;flex:1;justify-content:center}.story-dots button{display:grid;place-items:center;width:23px;height:23px;flex:none;border-radius:50%;font:500 9px/1 var(--body);color:var(--ink)}.story-dots button:before{inset:-3px}.story-dots button[aria-pressed=true]{color:var(--paper)}
-.story-note{font-size:9px;margin-top:10px;line-height:1.5;min-height:14px}
-.journey-context{font-size:21px;line-height:1.3;min-height:28px;text-align:center;margin:0 0 10px}
-.story-art>svg{max-height:37svh;width:100%;overflow:visible}
-.journey-checks{margin-top:10px;gap:12px}.journey-checks span{font-size:10px;padding-top:7px;white-space:nowrap}.journey-checks .at-risk{color:#a9492d}
-.story-outcome{display:flex;align-items:center;flex-direction:column;gap:6px;margin-top:16px;min-height:64px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s}
-.story-outcome.is-visible{opacity:1;visibility:visible;pointer-events:auto}
-.story-outcome button{background:var(--ink);color:var(--paper);border:1px solid var(--ink);border-radius:3px;padding:10px 17px;font-size:12px;line-height:1.5;min-height:38px;cursor:pointer}
-.story-outcome span{font-size:9px;line-height:1.5;text-align:center;color:var(--mute)}
-.story-experience-note{font-size:8px;letter-spacing:.07em;color:var(--mute);margin-top:15px;line-height:1.5;text-align:right}
-.story-switch{position:absolute;inset:0;z-index:3;background:#e8ecdf;display:grid;place-items:center;padding:30px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .16s,visibility .16s}
-.story-switch .hand{font-size:clamp(26px,4vw,44px);text-align:center;max-width:25ch}
-.story-section.is-switching .story-switch{opacity:1;visibility:visible;pointer-events:auto}
-.story-section.is-manual{height:auto}.story-section.is-manual .story-sticky{position:relative;top:0;min-height:0;overflow:visible;padding-block:35px}.story-section.is-manual .story-art>svg{max-height:none;width:100%;max-width:750px;margin:auto}
-@media(max-width:1100px){.story-copy>.hand{font-size:19px}.story-layout{gap:24px;grid-template-columns:minmax(260px,.8fr) minmax(0,1.5fr)}.journey-context{font-size:19px}.story-narrative{min-height:174px}.story-copy h3{font-size:27px}}
-@media(max-width:800px) and (min-width:651px){.story-layout{grid-template-columns:260px 1fr;gap:20px}.story-art>svg{max-height:34svh}.journey-checks{gap:6px}.journey-checks span{font-size:8px}.story-version-choice>span{max-width:24ch;text-align:right}.journey-context{font-size:17px;min-height:40px}.story-copy h3{font-size:25px}}
-@media(max-width:650px){.story-sticky{padding-block:14px}.story-header{min-height:59px;gap:12px;margin-top:12px}.story-header h2{font-size:24px}.story-version-choice{gap:5px;max-width:145px}.story-version-choice>span{font-size:8px;max-width:22ch;text-align:right}.story-mode button{font-size:9px;padding:5px 8px}.story-layout{grid-template-columns:1fr;gap:12px;margin-top:14px}.story-copy{display:block}.story-copy>.hand{display:none}.story-step-label{min-height:12px;justify-content:space-between;gap:12px}.story-progress-track{width:110px}.story-number{margin:0;font-size:8px}.story-narrative{margin-top:10px;min-height:121px}.story-copy h3{font-size:24px;min-height:2.24em;max-width:none;padding-right:0}.story-copy .story-narrative p{font-size:11px;line-height:1.55;min-height:5.8em;margin-top:7px;max-width:none}.story-feature{margin-top:8px;min-height:27px;padding-block:6px;font-size:9px}.story-controls{margin-top:9px;gap:13px;justify-content:center}.story-controls>button{height:29px;width:29px;font-size:14px}.story-dots{flex:0;gap:8px}.story-dots button{width:22px;height:22px;font-size:9px}.story-note{font-size:8px;text-align:center;margin-top:6px;min-height:12px}.story-art{grid-row:auto}.journey-context{font-size:18px;min-height:23px;margin-bottom:7px}.story-art>svg{max-height:28svh;margin:auto;width:100%;max-width:400px}.journey-checks{gap:8px;margin-top:6px}.journey-checks span{font-size:8px;padding-top:5px}.journey-checks i{font-size:11px}.story-outcome{margin-top:10px;min-height:59px;gap:5px}.story-outcome button{font-size:11px;padding:8px 13px;min-height:34px}.story-outcome span{font-size:8px}.story-experience-note{font-size:7px;text-align:center;margin-top:10px;letter-spacing:.025em}.story-section.is-manual .story-art>svg{max-width:400px}}
-@media(max-height:760px) and (min-width:651px){.story-copy>.hand{display:none}.story-narrative{min-height:157px}.story-header h2{font-size:29px}.story-layout{margin-top:15px}.story-copy h3{font-size:27px}.story-copy .story-narrative p{font-size:12px;min-height:6.6em}.story-art>svg{max-height:34svh}.story-note{margin-top:7px}.story-experience-note{margin-top:10px}}
-@media(prefers-reduced-motion:reduce){.story-switch{transition:none}.story-section{height:auto}.story-sticky{position:relative;top:0;min-height:0;overflow:visible}.story-art>svg{max-height:none}.story-narrative{transform:none!important;opacity:1!important}}
-@media print{.story-section{height:auto}.story-sticky{position:relative;top:0}.story-version-choice,.story-outcome,.story-switch{display:none}.story-narrative{opacity:1!important;transform:none!important}}
-@media(max-width:650px){.story-version-choice>span{display:none}.story-header{min-height:51px}.journey-context{font-size:16px;line-height:1.2;height:38.4px;min-height:38.4px;margin-bottom:5px}.story-feature{padding-block:4px;min-height:24px}}
+.story-acts{display:flex;align-items:center;gap:14px;font-size:12px;white-space:nowrap;color:#69776b}
+.story-acts span{padding-block:5px;border-bottom:2px solid transparent}.story-acts .is-active{color:var(--ink);border-color:var(--madder)}
+.story-section[data-version=sahej] .story-acts .is-active{border-color:#42735a}.story-acts i{font-style:normal}
+.story-layout{margin:0;min-height:0;height:100%;display:grid;grid-template-columns:minmax(250px,.75fr) minmax(0,1.5fr);gap:36px;align-items:center}
+.story-copy{display:grid;grid-template-columns:auto 1fr;gap:0 18px;align-items:center}
+.story-act{font-size:11px;font-weight:600;line-height:1.5;color:var(--madder)}.story-section[data-version=sahej] .story-act{color:#42735a}
+.story-step-label{display:flex;align-items:center;justify-content:flex-end;min-height:0;gap:12px}.story-number{margin:0;font-size:9px;letter-spacing:.06em}.story-progress-track{width:60px;height:3px}
+.story-narrative{grid-column:1/-1;min-height:210px;margin-top:22px}
+.story-copy h3{font:600 clamp(27px,2.5vw,36px)/1.12 var(--display);min-height:2.24em;max-width:21ch;margin:0;padding:0;letter-spacing:-.035em}
+.story-copy .story-narrative p{font-size:14px;line-height:1.65;max-width:40ch;min-height:0;margin-top:14px}
+#storyDescriptionMobile{display:none}
+.story-feature{grid-column:1/-1;font-size:11px;line-height:1.5;margin-top:14px;padding:10px 0;min-height:37px}
+.story-art{min-width:0;min-height:0;height:100%;display:flex;flex-direction:column;align-items:stretch}
+.journey-context{font-size:21px;line-height:1.2;min-height:26px;margin:0 0 10px;text-align:center}
+.story-art>svg{width:100%;height:0;min-height:0;max-height:none;flex:1 1 0;margin:0;max-width:none;overflow:visible}
+.journey-checks{flex:none;margin-top:12px;gap:12px}.journey-checks span{font-size:11px;padding-top:8px}.journey-checks i{font-size:14px}
+.story-footer{display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid var(--line);padding-top:10px}
+.story-note{margin:0;min-height:0;font-size:11px;line-height:1.5}.story-experience-note{margin:0;font-size:9px;line-height:1.5;letter-spacing:0;text-align:right;color:var(--mute)}
+@media(max-width:800px){.story-layout{gap:24px;grid-template-columns:minmax(230px,.9fr) minmax(0,1.2fr)}.story-narrative{min-height:215px}.story-copy h3{font-size:28px}.journey-context{font-size:17px}.journey-checks span{font-size:9px}}
+@media(max-width:650px){
+ .story-section{height:940svh;--story-nav:60px}
+ .story-sticky{position:sticky;top:var(--story-nav);height:calc(100svh - var(--story-nav));min-height:0;padding-block:14px;overflow:hidden}
+ .story-sticky>.wrap{gap:14px}
+ .story-section .section-top{padding-bottom:8px}.story-section .section-top .eyebrow{font-size:9px;letter-spacing:.05em}.story-section .section-top .quiet-link{font-size:10px}
+ .story-header{min-height:0;margin:0}.story-header h2{font-size:26px;line-height:1.08}.story-acts{display:none}
+ .story-layout{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:12px;margin:0;align-items:stretch}
+ .story-copy{display:grid;grid-template-columns:auto 1fr;gap:0 12px}.story-act{font-size:11px;white-space:nowrap}.story-number{font-size:9px}.story-progress-track{width:46px}
+ .story-narrative{min-height:138px;margin-top:10px}.story-copy h3{font-size:26px;min-height:2.24em;max-width:none;padding:0;line-height:1.12}
+ #storyDescription{display:none}#storyDescriptionMobile{display:block}
+ .story-copy .story-narrative p{font-size:14px;line-height:1.5;min-height:0;margin-top:8px;max-width:none}
+ .story-feature{display:none}.story-art{grid-row:auto;min-height:0;height:100%}.journey-context{display:none}
+ .story-art>svg{width:100%;height:0;min-height:0;max-height:none;max-width:none;margin:0;flex:1 1 0}
+ .journey-checks{margin-top:8px;gap:8px;grid-template-columns:repeat(2,1fr)}.journey-checks span{font-size:11px;padding-top:5px;line-height:1.4}.journey-checks i{font-size:13px}
+ .story-footer{display:block;padding-top:8px}.story-note{font-size:11px;text-align:left;line-height:1.5;margin:0}.story-experience-note{font-size:9px;text-align:left;margin-top:3px}
+}
+@media(max-height:690px) and (max-width:650px){.story-sticky{padding-block:10px}.story-sticky>.wrap{gap:9px}.story-header h2{font-size:22px}.story-narrative{min-height:124px;margin-top:8px}.story-copy h3{font-size:23px}.story-copy .story-narrative p{font-size:13px;line-height:1.45;margin-top:5px}.story-layout{gap:8px}.journey-checks{margin-top:3px;gap:4px 10px}.journey-checks span{font-size:10px;padding-top:3px}.story-experience-note{font-size:8px}.story-note{font-size:10px}}
+@media(max-height:600px) and (min-width:651px){.story-sticky{padding-block:12px}.story-sticky>.wrap{gap:10px}.story-header h2{font-size:26px}.story-narrative{min-height:175px;margin-top:12px}.story-copy h3{font-size:25px}.story-copy .story-narrative p{font-size:12px;margin-top:8px}.story-feature{margin-top:8px}.journey-context{font-size:16px}.journey-checks span{font-size:9px}.story-footer{padding-top:8px}}
+@media(max-height:450px){.story-header{display:none}.story-sticky>.wrap{grid-template-rows:auto minmax(0,1fr) auto;gap:8px}.story-layout{grid-template-columns:minmax(145px,.8fr) minmax(0,1.2fr);grid-template-rows:1fr;gap:14px;align-items:center}.story-narrative{min-height:0;margin-top:8px}.story-copy h3{font-size:20px}.story-copy .story-narrative p{font-size:11px;line-height:1.4}.story-progress-track{display:none}.story-act{font-size:9px}.story-number{font-size:8px}.story-feature,.journey-context,.story-experience-note{display:none}.journey-checks{grid-template-columns:repeat(2,1fr);gap:4px 10px;margin-top:3px}.journey-checks span{font-size:9px;padding-top:3px}.story-footer{padding-top:5px}.story-note{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.story-section{height:940svh}.story-sticky{position:sticky;top:var(--story-nav);min-height:0;height:calc(100svh - var(--story-nav));overflow:hidden}.story-art>svg{max-height:none}.story-narrative{opacity:1!important;transform:none!important}}
+@media print{.story-section{height:auto}.story-sticky{position:relative;top:0;height:auto;overflow:visible}.story-sticky>.wrap{display:block}.story-layout{display:block;height:auto}.story-art{height:350px}.story-footer{display:none}}
+
+/* Phone reading: larger text, fewer competing columns and generous tap targets. */
+@media(max-width:650px){
+ :root{--gut:22px}html{scroll-padding-top:70px}.nav{min-height:60px;padding-block:7px}.chapter-menu>summary{min-width:44px;min-height:44px}.brand{font-size:23px}.brand>span:first-child{font-size:24px}
+ .sec{padding-block:60px}.big,.strategy-heading .big{font-size:clamp(34px,9.5vw,42px);line-height:1.12}.lede{font-size:16px;line-height:1.65}.note{font-size:12px;line-height:1.65}.eyebrow{font-size:9px;letter-spacing:.08em}
+ .hero h1{font-size:clamp(48px,12vw,68px);margin-block:25px 22px}.hero-description{font-size:14px;line-height:1.65}.hero-caption{position:static;transform:none;margin-top:20px;max-width:none;gap:12px}.hero-caption svg{display:none}.hero-caption .hand{font-size:23px}.hero-art{margin-top:20px}.hero-bottom{display:block;font-size:11px}.hero-bottom>span{display:block;max-width:none!important}.hero-bottom>span:last-child{margin-top:5px;white-space:normal}
+ .counter{grid-template-columns:1fr;gap:0}.counter .n{grid-row:auto;font-size:60px}.counter p{margin-block:12px}.counter .chip{font-size:9px}.counters{gap:26px}.cascade-stats>button{grid-template-columns:87px 1fr 16px;gap:12px}.cascade-stats>button span{font-size:14px}.cascade-stats>button strong{font-size:40px}.gap-heading .lede{font-size:16px}
+ .feature p,.seg-detail p{font-size:15px;line-height:1.7}.feature>.eyebrow{font-size:10px}.solution-note p{font-size:14px}.seg{flex-basis:145px;min-height:44px}.seg b{font-size:13px}.seg .pri{font-size:11px}.seg-detail{padding:24px}.seg-detail dt{font-size:11px}.seg-detail dd{font-size:14px;line-height:1.65}.segs{scroll-padding-inline:0}
+ .tabs{gap:8px}.tab{font-size:12px;min-height:44px;padding:10px 12px}.comps{grid-template-columns:1fr;gap:8px}.comp{padding-block:22px}.comp .hd h3{font-size:20px}.comp .body{font-size:14px;min-height:0}.comp .body a{font-size:12px}.comp details{font-size:12px;margin-top:12px}.comp details summary{padding-block:7px}.comp dl{font-size:13px}.derived{font-size:13px}.mapwrap>div>h3{font-size:32px!important}
+ .res{padding:17px 14px}.res .k{font-size:10px}.res .v{font-size:30px}.slider label{font-size:13px}.reset{font-size:11px;min-height:44px}.funnel-steps p{font-size:14px}.funnel-steps .eyebrow{font-size:10px}.funnel-steps small{font-size:13px}.funnel-art .note{font-size:12px}
+ .swot-card{padding:24px}.swot-card-head{padding-bottom:18px}.swot-letter{font-size:44px}.swot-card h3{font-size:26px}.swot-tag{font-size:11px}.swot-illustration{width:72px;height:84px}.swot-card ul{gap:20px}.swot-card li p{font-size:14px;line-height:1.6}.swot-card li strong{font-size:15px}.strategy-source{font-size:11px}.strategy-heading .note{font-size:12px}
+ .force-map{grid-template-columns:1fr;gap:8px;margin-bottom:28px}.force-hub{width:90px;grid-column:auto;margin-bottom:10px}.force-node{width:100%;min-height:62px;flex-direction:row;align-items:center;justify-content:space-between;gap:15px;padding:14px 28px 14px 15px}.force-name{font-size:15px;max-width:18ch}.force-pressure{font-size:11px;flex:none;text-align:right}.force-open{right:9px;bottom:auto}.force-substitutes{grid-column:auto;min-height:62px}.force-map-caption{font-size:19px;bottom:-30px}.force-detail h3{font-size:30px}.force-body{line-height:1.7}.force-examples p{font-size:13px}.force-implication p{font-size:14px}
+ .canvas-item{padding:24px}.canvas-item h3{font-size:23px;line-height:1.3}.canvas-item .t{font-size:11px}.canvas-item .more{font-size:14px}.prove p{font-size:14px}.sources li{font-size:12px}.sources ul{gap:22px}.strategy-takeaway p{font-size:15px}
+}
+@media(max-width:360px){:root{--gut:18px}.story-header h2{font-size:22px}.story-copy h3{font-size:22px}.story-act{font-size:10px}.story-copy{gap:0 8px}.story-step-label{gap:6px}.story-progress-track{width:32px}.force-name{font-size:14px}.force-pressure{font-size:10px}}
+
+@media(max-height:620px) and (max-width:650px){.story-header{display:none}.story-sticky>.wrap{grid-template-rows:auto minmax(0,1fr) auto}}
 </style>
 </head>
 <body>
@@ -159,10 +187,13 @@
 </div><div class="hero-bottom wrap"><span>A clinic-first approach to chronic-care follow-up</span><span>From access <span class="thread-arrow">⤳</span> to completion</span></div>
 </section>
 <section class="story-section" id="story" aria-labelledby="storyHeading" data-version="today">
-<div class="story-sticky"><div class="wrap"><div class="section-top"><span class="eyebrow">01 / THE PATIENT JOURNEY</span><a class="quiet-link" href="#needs">Skip to the research ↗</a></div>
-<div class="story-header"><h2 id="storyHeading">One patient.<br><em>Two versions of care.</em></h2><div class="story-version-choice"><div class="story-mode" role="group" aria-label="Choose a version of care"><button type="button" data-story-version="today" aria-pressed="true">Today</button><button type="button" data-story-version="sahej" aria-pressed="false">With Sahej</button></div><span>Choose a version. Scroll through one month.</span></div></div>
-<div class="story-layout"><div class="story-copy"><span class="hand" id="storyAct">Today / without follow-through.</span><div class="story-step-label"><span class="story-number" id="storyNumber" aria-live="polite" aria-atomic="true">STEP 1 OF 5</span><span class="story-progress-track" aria-hidden="true"><i id="storyProgress"></i></span></div><div class="story-narrative"><h3 id="storyTitle">Meet Meena, 58.</h3><p id="storyDescription">She has high blood pressure and diabetes. She needs medicine, a blood test and a check-up every month.</p></div><div class="story-feature" id="storyFeature">Four recurring care tasks. One patient.</div><div class="story-controls"><button type="button" id="storyPrev" aria-label="Previous story step">←</button><div class="story-dots" role="group" aria-label="Explore steps in the selected version"></div><button type="button" id="storyNext" aria-label="Next story step">→</button></div><span class="story-note" id="storyNote">Scroll at your own pace, or use the arrows to explore each step.</span></div><div class="story-art"><p class="journey-context hand" id="journeyContext">At home / the month begins</p><svg id="journeyScene" role="img" aria-label="Meena's care journey: home, consultation, medicine, blood test and follow-up."></svg><div class="journey-checks" id="journeyChecks"><span>Consultation <i>○</i></span><span>Medicine <i>○</i></span><span>Blood test <i>○</i></span><span>Follow-up <i>○</i></span></div><div class="story-outcome" id="storyOutcome" aria-hidden="true"><button type="button" id="storyReplay" tabindex="-1">Replay this month with Sahej →</button><span id="storyOutcomeNote">Same patient. Same places. Choose a different version.</span></div></div></div><p class="story-experience-note">ILLUSTRATIVE PATIENT & PROPOSED EXPERIENCE · COMPLETION MUST BE VALIDATED</p></div><div class="story-switch" role="status" aria-live="polite"><span class="hand" id="storySwitchText"></span></div></div>
-</section>
+<div class="story-sticky"><div class="wrap">
+<div class="section-top"><span class="eyebrow">01 / THE PATIENT JOURNEY</span><a class="quiet-link" href="#needs">Skip to research ↗</a></div>
+<div class="story-header"><h2 id="storyHeading">One patient.<br><em>Two versions of care.</em></h2><div class="story-acts" aria-label="The two acts of Meena's story"><span class="is-active">Today</span><i aria-hidden="true">→</i><span>With Sahej</span></div></div>
+<div class="story-layout"><div class="story-copy"><span class="story-act" id="storyAct">01 / Today</span><div class="story-step-label"><span class="story-number" id="storyNumber" aria-live="polite" aria-atomic="true">STEP 1 OF 12</span><span class="story-progress-track" aria-hidden="true"><i id="storyProgress"></i></span></div><div class="story-narrative"><h3 id="storyTitle">Meet Meena, 58.</h3><p id="storyDescription">She has high blood pressure and diabetes. She needs medicine, a blood test and a check-up every month.</p><p id="storyDescriptionMobile">Meena, 58, has high blood pressure and diabetes. Each month: medicine, a blood test and a check-up.</p></div><div class="story-feature" id="storyFeature">Four recurring care tasks. One patient.</div></div>
+<div class="story-art"><p class="journey-context hand" id="journeyContext">At home / the month begins</p><svg id="journeyScene" role="img" aria-label="Meena's care journey: home, consultation, medicine, blood test and follow-up."></svg><div class="journey-checks" id="journeyChecks"><span>Consultation <i>○</i></span><span>Medicine <i>○</i></span><span>Blood test <i>○</i></span><span>Follow-up <i>○</i></span></div></div></div>
+<div class="story-footer"><span class="story-note" id="storyNote">Scroll to follow Meena’s month ↓</span><p class="story-experience-note">Illustrative patient · proposed experience</p></div>
+</div></div></section>
 <div class="story-transcript wrap"><details><summary>Read the complete patient story</summary><div class="transcript-grid"><article><h3>01 / Meet Meena, 58.</h3><p>She has high blood pressure and diabetes. She needs medicine, a blood test and a check-up every month.</p></article><article><h3>02 / She sees her doctor.</h3><p>The plan: take the medicine, get a blood test, come back in a month.</p></article><article><h3>03 / She collects the medicine.</h3><p>Two steps done. So far, so good.</p></article><article><h3>04 / The lab is across town. She puts it off.</h3><p>No test. No return visit. And the clinic never finds out.</p></article><article><h3>05 / Same patient. Now with Sahej.</h3><p>The clinic records every step the doctor prescribed, so nothing depends on memory.</p></article><article><h3>06 / Each step gets a nudge.</h3><p>A call in her own language before the refill and the test are due.</p></article><article><h3>07 / The test gets done.</h3><p>A person can help when the trip or the timing is in the way.</p></article><article><h3>08 / Back at the clinic, on time.</h3><p>The clinic sees four of four steps done. That is Sahej: from access to completion.</p></article></div></details></div>
 <section class="gap-section sec" id="needs"><div class="wrap"><div class="eyebrow">02 / MARKET NEEDS · THE GAP</div><div class="gap-heading"><h2 class="big">Being treated is not<br>the same as being <em>well.</em></h2><p class="lede">Access is the beginning. Refills, tests and return visits are where continuity of care has to happen.</p></div><div class="gap-layout"><div><span class="hand">Every figure is a person.</span><svg class="people-grid" id="peopleGrid" viewBox="0 0 500 330" role="img" aria-label="100 older adults with hypertension. 57 are aware, 51 are taking treatment and 27.5 percent have it controlled."><g class="person-mark" transform="translate(4 0)" style="--person-i:0;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(53 0)" style="--person-i:1;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(102 0)" style="--person-i:2;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(151 0)" style="--person-i:3;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(200 0)" style="--person-i:4;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(249 0)" style="--person-i:5;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(298 0)" style="--person-i:6;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(347 0)" style="--person-i:7;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(396 0)" style="--person-i:8;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(445 0)" style="--person-i:9;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(4 32)" style="--person-i:10;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(53 32)" style="--person-i:11;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(102 32)" style="--person-i:12;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(151 32)" style="--person-i:13;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(200 32)" style="--person-i:14;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(249 32)" style="--person-i:15;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(298 32)" style="--person-i:16;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(347 32)" style="--person-i:17;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(396 32)" style="--person-i:18;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(445 32)" style="--person-i:19;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(4 64)" style="--person-i:20;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(53 64)" style="--person-i:21;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(102 64)" style="--person-i:22;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(151 64)" style="--person-i:23;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(200 64)" style="--person-i:24;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(249 64)" style="--person-i:25;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(298 64)" style="--person-i:26;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(347 64)" style="--person-i:27;--shirt:#91ba9a;opacity:1"><use href="#elder-bust" width="39" height="31"/><defs><clipPath id="half-person-clip"><rect x="0" y="0" width="20" height="53"/></clipPath></defs><use class="half-person" href="#elder-bust" width="39" height="31" style="--shirt:#d8d1bf" clip-path="url(#half-person-clip)"/></g><g class="person-mark" transform="translate(396 64)" style="--person-i:28;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(445 64)" style="--person-i:29;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(4 96)" style="--person-i:30;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(53 96)" style="--person-i:31;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(102 96)" style="--person-i:32;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(151 96)" style="--person-i:33;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(200 96)" style="--person-i:34;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(249 96)" style="--person-i:35;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(298 96)" style="--person-i:36;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(347 96)" style="--person-i:37;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(396 96)" style="--person-i:38;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(445 96)" style="--person-i:39;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(4 128)" style="--person-i:40;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(53 128)" style="--person-i:41;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(102 128)" style="--person-i:42;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(151 128)" style="--person-i:43;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(200 128)" style="--person-i:44;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(249 128)" style="--person-i:45;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(298 128)" style="--person-i:46;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(347 128)" style="--person-i:47;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(396 128)" style="--person-i:48;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(445 128)" style="--person-i:49;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(4 160)" style="--person-i:50;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(53 160)" style="--person-i:51;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(102 160)" style="--person-i:52;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(151 160)" style="--person-i:53;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(200 160)" style="--person-i:54;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(249 160)" style="--person-i:55;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(298 160)" style="--person-i:56;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(347 160)" style="--person-i:57;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(396 160)" style="--person-i:58;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(445 160)" style="--person-i:59;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(4 192)" style="--person-i:60;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(53 192)" style="--person-i:61;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(102 192)" style="--person-i:62;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(151 192)" style="--person-i:63;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(200 192)" style="--person-i:64;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(249 192)" style="--person-i:65;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(298 192)" style="--person-i:66;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(347 192)" style="--person-i:67;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(396 192)" style="--person-i:68;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(445 192)" style="--person-i:69;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(4 224)" style="--person-i:70;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(53 224)" style="--person-i:71;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(102 224)" style="--person-i:72;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(151 224)" style="--person-i:73;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(200 224)" style="--person-i:74;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(249 224)" style="--person-i:75;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(298 224)" style="--person-i:76;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(347 224)" style="--person-i:77;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(396 224)" style="--person-i:78;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(445 224)" style="--person-i:79;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(4 256)" style="--person-i:80;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(53 256)" style="--person-i:81;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(102 256)" style="--person-i:82;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(151 256)" style="--person-i:83;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(200 256)" style="--person-i:84;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(249 256)" style="--person-i:85;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(298 256)" style="--person-i:86;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(347 256)" style="--person-i:87;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(396 256)" style="--person-i:88;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(445 256)" style="--person-i:89;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(4 288)" style="--person-i:90;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(53 288)" style="--person-i:91;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(102 288)" style="--person-i:92;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(151 288)" style="--person-i:93;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(200 288)" style="--person-i:94;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(249 288)" style="--person-i:95;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(298 288)" style="--person-i:96;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(347 288)" style="--person-i:97;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(396 288)" style="--person-i:98;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g><g class="person-mark" transform="translate(445 288)" style="--person-i:99;--shirt:#91ba9a;opacity:0.3"><use href="#elder-bust" width="39" height="31"/></g></svg><p class="note">100 people aged 60+ with hypertension. The half-coloured person represents the exact 27.5% controlled figure.</p></div><div class="cascade-stats" role="group" aria-label="Explore the care cascade"><button type="button" data-cascade="0" aria-pressed="false"><strong>100</strong><span>living with hypertension</span><i>↗</i></button><button type="button" data-cascade="1" aria-pressed="false"><strong>57</strong><span>know they have it</span><i>↗</i></button><button type="button" data-cascade="2" aria-pressed="false"><strong>51</strong><span>are taking treatment</span><i>↗</i></button><button type="button" data-cascade="3" aria-pressed="true"><strong>27.5</strong><span>have it under control</span><i>↗</i></button><p class="note" id="cascadeDescription">The last gap is where follow-up lives: refills, tests and return visits.</p><p class="note"><span class="chip">Verified</span> LASI 2017–18 · age 60+ only. Younger adults are likely different; no source found. <a href="#sources">View source ↗</a></p></div></div></div></section>
 <section class="on-gold sec" id="needs2" data-nav="Market Needs">
@@ -312,7 +343,7 @@ const NS='http://www.w3.org/2000/svg';
 let refreshScrollMotion=()=>{};
 function svgEl(tag,attrs,parent){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));if(parent)parent.appendChild(e);return e;}
 
-// Two explicitly chosen versions. Native page scrolling is never intercepted.
+// One continuous, reversible scroll story. Native scrolling is never intercepted.
 const storySection=$('#story'),scene=$('#journeyScene');
 const JOURNEY={
  today:[
@@ -331,21 +362,38 @@ const JOURNEY={
   {title:'The care loop is complete.',body:'The consultation, medicine, test and follow-up are completed in this proposed version. Sahej still has to prove that this support improves completion in practice.',feature:'Four of four steps / the proposed outcome to test.',context:'End of the month / the next steps stayed connected',chapter:'The proposed outcome',from:4,to:4}
  ]
 };
-let storyVersion='today',sceneState,scenePortrait,storyStage=-1,manualStory=false,storyStart=0,storyRange=1;
-let journeyProgress=0,journeyTarget=0,journeyFrame=0,journeyLastTime=0,journeyInitialized=false,versionSwitching=false,versionTimer;
+const TIMELINE=[
+ ...JOURNEY.today.map((step,i)=>({...step,version:'today',weight:[.65,1,1,1.1,.85][i]})),
+ {version:'bridge',weight:1.25,from:2.32,to:0,chapter:'A different possibility',title:'What if the plan stayed with her?',body:'Keep scrolling to replay Meena’s month with Sahej. The same patient and care tasks; this time, support joins each step.',feature:'Replaying the same month, with support.',context:'Rewinding the month / same patient, same places'},
+ ...JOURNEY.sahej.map((step,i)=>({...step,version:'sahej',weight:[.65,1,1,1.1,1.1,.85][i]}))
+];
+const MOBILE_COPY=[
+ 'Meena, 58, has high blood pressure and diabetes. Each month: medicine, a blood test and a check-up.',
+ 'The doctor gives her a prescription. The next steps are hers to remember and arrange.',
+ 'She collects her medicine. The test and return visit are still ahead.',
+ 'The lab is across town. Timing and travel get in the way; the test gets put off.',
+ 'No test result. No return visit. The clinic cannot see where the plan slipped.',
+ 'Rewind the same month. Same Meena, same care tasks—now with Sahej alongside her.',
+ 'The same month begins again. This is the proposed experience with support.',
+ 'CareLoop keeps the prescribed medicine, test and follow-up in one visible checklist.',
+ 'BoliCare gives her a reminder in her own language before the refill is due.',
+ 'A person helps with timing and travel, so the blood test can happen.',
+ 'With her consent, FamilyBridge helps a caregiver support the return visit.',
+ 'All four tasks are completed in this proposed version. Sahej still has to prove this in practice.'
+];
+let storyVersion='today',sceneState,scenePortrait,storyStage=-1,storyStart=0,storyRange=1;
+let journeyProgress=0,journeyTarget=0,journeyFrame=0,journeyLastTime=0,journeyInitialized=false;
 const smoothStep=t=>t*t*(3-2*t);
-function storyPhases(){return JOURNEY[storyVersion];}
-function stepPosition(k){return (k+.97)/storyPhases().length;}
 function buildJourney(){
  const portrait=innerWidth<=650;if(sceneState&&scenePortrait===portrait)return;
- scenePortrait=portrait;scene.replaceChildren();scene.setAttribute('viewBox',portrait?'0 0 530 590':'0 75 1100 390');
+ scenePortrait=portrait;scene.replaceChildren();scene.setAttribute('viewBox',portrait?'0 0 530 400':'0 75 1100 390');
  const parts=portrait?[
-  'M85 180 C155 74 304 83 380 180','M380 180 C442 305 84 286 85 460','M85 460 C142 557 316 557 380 460','M380 460 C505 380 505 258 380 180'
+  'M95 133 C159 60 302 60 385 133','M385 133 C428 218 79 204 95 306','M95 306 C170 378 315 378 385 306','M385 306 C494 254 494 188 385 133'
  ]:[
   'M80 355 C139 355 221 246 325 265','M325 265 C420 278 465 374 570 360','M570 360 C674 354 692 247 810 267','M810 267 C910 280 922 356 1020 354'
  ];
- const desc=svgEl('desc',{},scene);desc.textContent='The same patient and places in two explicitly selected versions of a month of care.';
- svgEl('path',{d:portrait?'M40 552q223 35 443-4':'M17 437q523 47 1060 0',stroke:'#a6b79d','stroke-width':1.5,fill:'none'},scene);
+ const desc=svgEl('desc',{},scene);desc.textContent='Scroll through Meena’s month today, rewind the same month, then follow the proposed experience with Sahej.';
+ svgEl('path',{d:portrait?'M40 374q223 25 443-4':'M17 437q523 47 1060 0',stroke:'#a6b79d','stroke-width':1.5,fill:'none'},scene);
  if(!portrait){svgEl('use',{href:'#tree',x:128,y:114,width:95,height:165},scene);svgEl('use',{href:'#tree',x:876,y:97,width:86,height:149},scene);}
  const routeD=parts.map((p,i)=>i?p.replace(/^M[\d.]+ [\d.]+ /,''):p).join(' ');
  const route=svgEl('path',{d:routeD,fill:'none',stroke:'#a2b49c','stroke-width':3,'stroke-dasharray':'2 9','stroke-linecap':'round'},scene);
@@ -356,7 +404,7 @@ function buildJourney(){
  const points=fractions.map(pointAt),trail=svgEl('path',{d:routeD,fill:'none',stroke:'#d66e4c','stroke-width':4,'stroke-linecap':'round'},scene);
  trail.style.strokeDasharray=length+' '+length;
  const names=['Home',portrait?'Doctor / return visit':'Doctor','Medicine','Blood test','Check-up'],symbols=['home','clinic','pharmacy','lab','clinic'];
- const buildingW=portrait?133:151,buildingH=portrait?128:145;
+ const buildingW=portrait?116:151,buildingH=portrait?109:145;
  points.forEach((p,i)=>{if(portrait&&i===4)return;svgEl('use',{href:'#'+symbols[i],x:p.x-buildingW/2,y:p.y-buildingH-9,width:buildingW,height:buildingH},scene);const text=svgEl('text',{x:p.x,y:p.y+31,'text-anchor':'middle',class:'journey-label',style:portrait&&i===1?'font-size:20px':''},scene);text.textContent=names[i];});
  svgEl('use',{href:'#doctor',x:points[1].x+44,y:points[1].y-111,width:68,height:112},scene);
  const badges=points.map((p,i)=>{const g=svgEl('g',{transform:`translate(${p.x+(portrait&&i===1?-60:portrait?49:58)} ${p.y-buildingH+5})`,opacity:0,class:'journey-overlay'},scene);const c=svgEl('circle',{r:14,fill:'#b5d1c2',stroke:'#263f38','stroke-width':2},g),mark=svgEl('text',{x:0,y:6,'text-anchor':'middle',fill:'#263f38','font-size':20,'font-family':'Arial'},g);return {g,c,mark};});
@@ -369,38 +417,38 @@ function buildJourney(){
  const phone=svgEl('use',{href:'#phone',x:37,y:-89,width:32,height:46,opacity:0,class:'journey-overlay'},patient);
  sceneState={length,fractions,pointAt,trail,patient,badges,barrier,caregiver,plan,phone};
 }
-function buildStorySteps(){
- const dots=$('.story-dots');dots.replaceChildren();storyPhases().forEach((step,i)=>{const button=document.createElement('button');button.type='button';button.textContent=String(i+1);button.setAttribute('aria-label',`Step ${i+1}: ${step.chapter}`);button.setAttribute('aria-pressed','false');button.addEventListener('click',()=>jumpStory(i));dots.appendChild(button);});
- $$('[data-story-version]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.storyVersion===storyVersion)));
- storySection.dataset.version=storyVersion;$('#storyAct').textContent=storyVersion==='sahej'?'The same month, with support.':'Today / without follow-through.';
-}
 function getJourneyFrame(progress,phases,fractions){
- const full=clamp(progress,0,.999999)*phases.length,k=Math.floor(full),local=full-k,step=phases[k];
+ const total=phases.reduce((sum,step)=>sum+step.weight,0),full=clamp(progress,0,.999999)*total;
+ let k=0,start=0;
+ while(k<phases.length-1&&full>=start+phases[k].weight){start+=phases[k].weight;k++;}
+ const step=phases[k],local=(full-start)/step.weight;
  const fraction=stop=>{const i=Math.min(3,Math.floor(stop)),t=stop-i;return fractions[i]+(fractions[i+1]-fractions[i])*t;};
  const travel=smoothStep(clamp((local-.12)/.66,0,1));
  return {k,local,at:fraction(step.from)+(fraction(step.to)-fraction(step.from))*travel};
 }
 function renderStory(progress){
  if(!sceneState)return;
- const phases=storyPhases(),s=sceneState,{k,local,at}=getJourneyFrame(progress,phases,s.fractions),step=phases[k],withSahej=storyVersion==='sahej',point=s.pointAt(at);
+ const phases=TIMELINE,s=sceneState,{k,local,at}=getJourneyFrame(progress,phases,s.fractions),step=phases[k],withSahej=step.version==='sahej',replaying=step.version==='bridge',point=s.pointAt(at);
+ storyVersion=step.version;
  s.patient.setAttribute('transform',`translate(${point.x.toFixed(2)} ${point.y.toFixed(2)})`);
  s.caregiver.setAttribute('transform',`translate(${point.x.toFixed(2)} ${point.y.toFixed(2)})`);
- s.trail.setAttribute('stroke',withSahej?'#42735a':'#d66e4c');s.trail.style.strokeDashoffset=String(s.length*(1-at));
- const missed=!withSahej&&k===phases.length-1;
- s.badges.forEach((badge,i)=>{const failed=missed&&i>=3,done=i>0&&at>=s.fractions[i]-.001;badge.g.setAttribute('opacity',failed||done?1:0);badge.mark.textContent=failed?'×':'✓';badge.c.setAttribute('fill',failed?'#e9b397':'#b5d1c2');});
- s.barrier.setAttribute('opacity',!withSahej&&k>=3?clamp((local-.35)*4,0,1):0);
+ s.trail.setAttribute('stroke',withSahej?'#42735a':replaying?'#8d9f8f':'#d66e4c');s.trail.style.strokeDashoffset=String(s.length*(1-at));
+ const missed=step.version==='today'&&k===4;
+ s.badges.forEach((badge,i)=>{const failed=missed&&i>=3,done=!replaying&&i>0&&at>=s.fractions[i]-.001;badge.g.setAttribute('opacity',failed||done?1:0);badge.mark.textContent=failed?'×':'✓';badge.c.setAttribute('fill',failed?'#e9b397':'#b5d1c2');});
+ s.barrier.setAttribute('opacity',step.version==='today'&&k===3?clamp((local-.35)*4,0,1):0);
  if(missed)s.barrier.setAttribute('opacity',1);
- s.plan.setAttribute('opacity',withSahej&&k===1?1:0);s.phone.setAttribute('opacity',withSahej&&k===2?1:0);s.caregiver.setAttribute('opacity',withSahej&&(k===3||k===4)?1:0);
- $$('#journeyChecks span').forEach((check,i)=>{const failed=missed&&i>=2,done=at>=s.fractions[i+1]-.001,delayed=!withSahej&&k===3&&i===2;check.classList.toggle('done',done&&!failed);check.classList.toggle('missed',failed);check.classList.toggle('at-risk',delayed);$('i',check).textContent=failed?'×':done?'✓':delayed?'…':'○';check.setAttribute('aria-label',['Consultation','Medicine','Blood test','Follow-up'][i]+': '+(failed?'missed':done?'completed':delayed?'delayed':'upcoming'));});
+ s.plan.setAttribute('opacity',withSahej&&k===7?1:0);s.phone.setAttribute('opacity',withSahej&&k===8?1:0);s.caregiver.setAttribute('opacity',withSahej&&(k===9||k===10)?1:0);
+ $$('#journeyChecks span').forEach((check,i)=>{const failed=missed&&i>=2,done=!replaying&&at>=s.fractions[i+1]-.001,delayed=step.version==='today'&&k===3&&i===2;check.classList.toggle('done',done&&!failed);check.classList.toggle('missed',failed);check.classList.toggle('at-risk',delayed);$('i',check).textContent=failed?'×':done?'✓':delayed?'…':'○';check.setAttribute('aria-label',['Consultation','Medicine','Blood test','Follow-up'][i]+': '+(failed?'missed':done?'completed':delayed?'delayed':'upcoming'));});
  $('#storyProgress').style.transform=`scaleX(${clamp(progress,0,1)})`;
- storySection.dataset.step=String(k);storySection.dataset.journeyProgress=progress.toFixed(4);storySection.dataset.patientFraction=at.toFixed(4);
+ storySection.dataset.version=step.version;storySection.dataset.step=String(k);storySection.dataset.journeyProgress=progress.toFixed(4);storySection.dataset.patientFraction=at.toFixed(4);
  if(k!==storyStage){
   const wasInitialized=storyStage>=0;storyStage=k;$('#storyTitle').textContent=step.title;$('#storyDescription').textContent=step.body;$('#storyFeature').textContent=step.feature;$('#journeyContext').textContent=step.context;$('#storyNumber').textContent=`STEP ${k+1} OF ${phases.length}`;
-  $$('.story-dots button').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===k)));$('#storyPrev').disabled=k===0;$('#storyNext').disabled=k===phases.length-1;
-  const outcome=$('#storyOutcome');outcome.classList.toggle('is-visible',k===phases.length-1);outcome.setAttribute('aria-hidden',String(k!==phases.length-1));$('#storyReplay').tabIndex=k===phases.length-1?0:-1;
-  $('#storyReplay').textContent=withSahej?'Replay the month without Sahej ↻':'Replay this month with Sahej →';$('#storyOutcomeNote').textContent=withSahej?'A proposed outcome that still needs validation.':'Same patient. Same places. Choose a different version.';
+  $('#storyDescriptionMobile').textContent=MOBILE_COPY[k];
+  $('#storyAct').textContent=replaying?'Rewind / a different possibility':withSahej?'02 / With Sahej':'01 / Today';
+  $$('.story-acts span').forEach((act,i)=>act.classList.toggle('is-active',i===0?step.version==='today':withSahej));
+  $('#storyNote').textContent=k===11?'Scroll on to explore the research ↓':replaying?'Keep scrolling. Replay the month with support ↓':k===4?'Keep scrolling to see where Sahej could fit ↓':'Scroll to follow Meena’s month ↓';
   scene.setAttribute('aria-label',step.title+' '+step.body);
-  if(wasInitialized&&!motion.matches&&!versionSwitching){$('.story-narrative').getAnimations().forEach(a=>a.cancel());$('.story-narrative').animate([{opacity:.6,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}],{duration:180,easing:'ease-out'});}
+  if(wasInitialized&&!motion.matches){$('.story-narrative').getAnimations().forEach(a=>a.cancel());$('.story-narrative').animate([{opacity:.6,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}],{duration:180,easing:'ease-out'});}
  }
 }
 function animateJourney(time){
@@ -416,46 +464,20 @@ function setJourneyTarget(progress,snap=false){
  else if(!journeyFrame)journeyFrame=requestAnimationFrame(animateJourney);
 }
 function measureStory(preservePlace=false){
- const oldManual=manualStory,oldProgress=journeyProgress,wasInsideStory=journeyInitialized&&scrollY>=storyStart-2&&scrollY<=storyStart+storyRange+2;buildJourney();storySection.classList.remove('is-manual');
- const navHeight=$('.nav').getBoundingClientRect().height,sticky=$('.story-sticky'),styles=getComputedStyle(sticky),contentHeight=$('.story-sticky>.wrap').getBoundingClientRect().height+parseFloat(styles.paddingTop)+parseFloat(styles.paddingBottom);
- manualStory=motion.matches||styles.position!=='sticky'||contentHeight>innerHeight-navHeight+2;storySection.classList.toggle('is-manual',manualStory);
- storyStart=storySection.getBoundingClientRect().top+scrollY-navHeight;storyRange=Math.max(1,storySection.offsetHeight-(innerHeight-navHeight));
- $('#storyNote').textContent=manualStory?'Explore the steps with the arrows or numbered buttons.':'Scroll at your own pace, or use the arrows to explore each step.';
- if(!journeyInitialized){journeyInitialized=true;setJourneyTarget(0,true);}
- else if(manualStory&&(!oldManual||motion.matches))setJourneyTarget(stepPosition(Math.max(0,storyStage)),true);
- else renderStory(journeyProgress);
- if(preservePlace&&wasInsideStory){
-  if(!manualStory){setJourneyTarget(oldProgress,true);window.scrollTo({top:storyStart+storyRange*oldProgress,behavior:'instant'});}
-  else if(!oldManual)window.scrollTo({top:storyStart,behavior:'instant'});
- }
+ const oldStart=storyStart,oldRange=storyRange,oldProgress=clamp((scrollY-storyStart)/storyRange,0,1),wasInsideStory=journeyInitialized&&scrollY>=storyStart-2&&scrollY<=storyStart+storyRange+2;
+ const navHeight=$('.nav').getBoundingClientRect().height;
+ storySection.style.setProperty('--story-nav',navHeight+'px');buildJourney();
+ const sticky=$('.story-sticky');
+ storyStart=storySection.getBoundingClientRect().top+scrollY-navHeight;
+ storyRange=Math.max(1,storySection.offsetHeight-sticky.offsetHeight);
+ if(!journeyInitialized){journeyInitialized=true;setJourneyTarget(0,true);}else renderStory(journeyProgress);
+ if(preservePlace&&wasInsideStory&&(Math.abs(storyStart-oldStart)>1||Math.abs(storyRange-oldRange)>1)){setJourneyTarget(oldProgress,true);window.scrollTo({top:storyStart+storyRange*oldProgress,behavior:'instant'});}
 }
 function updateStoryFromScroll(){
- if(manualStory||versionSwitching)return;
  const p=clamp((scrollY-storyStart)/storyRange,0,1);
  const near=scrollY>=storyStart-innerHeight&&scrollY<=storyStart+storyRange+innerHeight;
  setJourneyTarget(p,!near);
 }
-function jumpStory(k){
- k=clamp(k,0,storyPhases().length-1);
- if(manualStory){setJourneyTarget(stepPosition(k),motion.matches||Math.abs(k-storyStage)>1);return;}
- window.scrollTo({top:storyStart+storyRange*stepPosition(k),behavior:motion.matches?'instant':'smooth'});
-}
-function chooseStoryVersion(version){
- if(version===storyVersion||versionSwitching)return;
- const wasManual=manualStory,oldTop=scrollY;versionSwitching=true;storySection.classList.add('is-switching');$('#storySwitchText').textContent=version==='sahej'?'Replaying the same month, with Sahej.':'Replaying the same month, without Sahej.';
- const switchVersion=()=>{
-  storyVersion=version;storyStage=-1;buildStorySteps();setJourneyTarget(0,true);measureStory();
-  if(!wasManual&&!manualStory)window.scrollTo({top:storyStart,behavior:'instant'});else if(wasManual&&manualStory&&oldTop>storyStart+innerHeight)window.scrollTo({top:storyStart,behavior:'instant'});
-  refreshScrollMotion();
-  $(`[data-story-version="${version}"]`).focus({preventScroll:true});
-  clearTimeout(versionTimer);versionTimer=setTimeout(()=>{storySection.classList.remove('is-switching');versionSwitching=false;updateStoryFromScroll();},motion.matches?0:180);
- };
- if(motion.matches)switchVersion();else{clearTimeout(versionTimer);versionTimer=setTimeout(switchVersion,160);}
-}
-$$('[data-story-version]').forEach(button=>button.addEventListener('click',()=>chooseStoryVersion(button.dataset.storyVersion)));
-$('#storyReplay').addEventListener('click',()=>chooseStoryVersion(storyVersion==='today'?'sahej':'today'));
-$('#storyPrev').addEventListener('click',()=>jumpStory(storyStage-1));$('#storyNext').addEventListener('click',()=>jumpStory(storyStage+1));
-buildStorySteps();
 
 // Exact 27.5% uses 27 whole figures plus half of the 28th figure.
 const people=$$('.person-mark'), cascadeDescriptions=[
